@@ -44,3 +44,13 @@ might be useful for counting how data gets split up across threads.
 
 - In C programs you can wrap long lines of code across multiple lines by including a backslash character (\) at the end of a line (without a semicolon). Try splitting the long ```#pragrama``` line across three lines.
 - Explore some of the other clauses that parallel for loops support (https://computing.llnl.gov/tutorials/openMP/#DO). What's the difference between private, firstprivate, and lastprivate?
+
+**4. sections**
+
+- Run this code with 8 threads. How many threads end up processing data?
+
+**5. critical**
+
+**6. reduce**
+
+**7. threadprivate**

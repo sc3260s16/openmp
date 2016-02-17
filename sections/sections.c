@@ -4,30 +4,36 @@
 int main ()
 {
 
-  int i;
-  float a[N], b[N], c[N], d[N];
+   int i;
+   float a[N], b[N], c[N], d[N];
 
-  /* Some initializations */
-  for (i=0; i < N; i++) {
-    a[i] = i * 1.5;
-    b[i] = i + 22.35;
-  }
+   /* Some initializations */
+   for (i=0; i < N; i++) {
+      a[i] = i * 1.5;
+      b[i] = i + 22.35;
+   }
 
-#pragma omp parallel shared(a,b,c,d) private(i)
-  {
+   #pragma omp parallel shared(a,b,c,d) private(i)
+   {
 
-  #pragma omp sections nowait
-    {
+      int tid = omp_get_thread_num();
 
-    #pragma omp section
-    for (i=0; i < N; i++)
-      c[i] = a[i] + b[i];
+      #pragma omp sections nowait
+      {
 
-    #pragma omp section
-    for (i=0; i < N; i++)
-      d[i] = a[i] * b[i];
+         #pragma omp section
+         for (i=0; i < N; i++) {
+            printf("thread id: %d, i: %d, loop 1\n",tid,i);
+            c[i] = a[i] + b[i];
+         }
 
-    }  /* end of sections */
+         #pragma omp section
+         for (i=0; i < N; i++) {
+            printf("thread id: %d, i: %d, loop 2\n",tid,i);
+            d[i] = a[i] * b[i];
+         }
+
+      }  /* end of sections */
 
   }  /* end of parallel section */
 
