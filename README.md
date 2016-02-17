@@ -41,3 +41,5 @@ Something like:
 might be useful for counting how data gets split up across threads.
 
 **3. parallel-for-combined-directive**
+
+- In C programs you can wrap long lines of code across multiple lines by including a backslash character (\) at the end of a line (without a semicolon). Try splitting the long ```#pragrama``` line across three lines.

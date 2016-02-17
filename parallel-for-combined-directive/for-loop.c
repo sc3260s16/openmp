@@ -5,20 +5,21 @@
 int main ()  
 {
 
-  int i, chunk;
-  float a[N], b[N], c[N];
+   int i, chunk;
+   float a[N], b[N], \
+         c[N];
 
-  /* Some initializations */
-  for (i=0; i < N; i++)
-    a[i] = b[i] = i * 1.0;
-  chunk = CHUNKSIZE;
+   /* Some initializations */
+   for (i=0; i < N; i++)
+      a[i] = b[i] = i * 1.0;
+   chunk = CHUNKSIZE;
 
-#pragma omp parallel for \
-  shared(a,b,c,chunk) private(i) \
-  schedule(static,chunk)
-  for (i=0; i < N; i++)
-    c[i] = a[i] + b[i];
+   #pragma omp parallel for shared(a,b,c,chunk) private(i) schedule(static,chunk)
+   for (i=0; i < N; i++)
+   {
+      c[i] = a[i] + b[i];
+   }
 
-  return 0;
+   return 0;
 
 }
