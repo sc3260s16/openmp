@@ -14,6 +14,7 @@ int main ()
       a[i] = b[i] = i * 1.0;
    chunk = CHUNKSIZE;
 
+   /* Note that we cannot apply the nowait construct here */
    #pragma omp parallel for shared(a,b,c,chunk) private(i) schedule(static,chunk)
    for (i=0; i < N; i++)
    {
