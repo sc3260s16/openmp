@@ -23,8 +23,21 @@ Where 2 is the number of threads to use for parallel portions of the program.
 
 - Run the program three times in a row with 8 threads. What do you notice?
 - Try running the program without invoking the shell script (i.e. type ```./hello```). What is the default number of threads? Where does this value come from?
+- Add ```printf("All done!\n");``` at the end of the program, outside of the parallel region. What do you notice when you run the program repeatedly?
 
 **2. parallel-for** 
 
+- Are variables declared inside of a parallel region defined as private or shared?
+- Run your code with eight threads. How is the array split up across the threads? Is this behavior consistent for multiple instances of the program?
+- Try changing the thread scheduling from *dynamic* to *static* - how is the array split up across threads now? Now try with the *guided* option.
+
+Something like:
+
+	bash run.sh 8 > out
+	grep -c "0," out
+	grep -c "1," out
+	...
+
+might be useful for counting how data gets split up across threads.
 
 **3. parallel-for-combined-directive**
