@@ -49,9 +49,12 @@ might be useful for counting how data gets split up across threads.
 **4. sections**
 
 - Run this code with 8 threads. How many threads end up processing data?
+- Notice the absence of curly brackets {} inside each ```#pragma omp section``` block of code. Curly brackets are not needed if you are only enclosing a single line of code or a loop.
 - Let's pretend we want to store the sum of arrays *c* and *d* into another array *e*. Where should we put that code? Are any other changes to the exisiting program needed?
 
 **5. critical**
+
+- Try commenting out the critical directive line, re-building, and running with a bunch of threads (a few hundred).
 
 **6. reduce**
 
