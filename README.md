@@ -61,3 +61,6 @@ might be useful for counting how data gets split up across threads.
 - What happens if you change the operator to a minus sign in the reduction clause? 
 
 **7. threadprivate**
+
+- Note that *a* and *x* are declared *threadprivate* whereas *b* is not. How does this difference manifest itself in the output from the program?
+- Rather than setting *a* equal to *tid* in the first parallel region, try commenting that line out and then initializing *a* to a value of 2 before the first parallel region. What output do you observe for *a* now? Try adding the ```copyin(a)``` clause to the end of the first parallel region. Now what's the output for *a*?

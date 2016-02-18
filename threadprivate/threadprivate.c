@@ -6,10 +6,8 @@ float x;
  
 #pragma omp threadprivate(a,x)
  
-int main ()  {
- 
-   /* Explicitly turn off dynamic threads */
-   omp_set_dynamic(0);
+int main ()  
+{
  
    printf("1st Parallel Region:\n");
    #pragma omp parallel private(b,tid)
