@@ -7,4 +7,4 @@ reduce : reduce.c
 .PHONY: clean
 
 clean :
-	rm reduce
+	rm -f reduce

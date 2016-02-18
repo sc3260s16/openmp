@@ -7,4 +7,4 @@ sections : sections.c
 .PHONY: clean
 
 clean :
-	rm sections
+	rm -f sections

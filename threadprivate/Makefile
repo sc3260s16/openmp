@@ -7,4 +7,4 @@ threadprivate : threadprivate.c
 .PHONY: clean
 
 clean :
-	rm threadprivate
+	rm -f threadprivate

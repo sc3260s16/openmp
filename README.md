@@ -58,4 +58,6 @@ might be useful for counting how data gets split up across threads.
 
 **6. reduce**
 
+- What happens if you change the operator to a minus sign in the reduction clause? 
+
 **7. threadprivate**

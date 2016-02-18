@@ -7,4 +7,4 @@ critical : critical.c
 .PHONY: clean
 
 clean :
-	rm critical
+	rm -f critical

@@ -7,4 +7,4 @@ for-loop : for-loop.c
 .PHONY: clean
 
 clean :
-	rm for-loop
+	rm -f for-loop
