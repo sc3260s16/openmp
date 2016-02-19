@@ -28,7 +28,7 @@ Where 2 is the number of threads to use for parallel portions of the program.
 **2. parallel-for** 
 
 - Are variables declared inside of a parallel region defined as private or shared?
-- Run your code with eight threads. How is the array split up across the threads? Is this behavior consistent for multiple instances of the program?
+- Run your code with eight threads. How is the array split up across the threads (see hint below)? Is this behavior consistent for multiple instances of the program?
 - Try changing the thread scheduling from *dynamic* to *static* - how is the array split up across threads now? Now try with the *guided* option (you will need to increase the loop size by an order of magnitude to see this difference clearly).
 
 Something like:
@@ -39,6 +39,10 @@ Something like:
 	...
 
 might be useful for counting how data gets split up across threads.
+
+- Run the time command on the program with a different number of threads (1, 2, 4, 8). How does the wall (i.e. real) time change? 
+
+	time bash run.sh 1 > tmp
 
 **3. parallel-for-combined-directive**
 
